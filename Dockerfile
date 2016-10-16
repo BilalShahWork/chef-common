@@ -21,8 +21,11 @@ RUN useradd -m -G sudo -p "pa8/1qs2vUg9U" chefuser
 #
 # use sudo -s to change root pw and login as root
 # we start off as chefuser and its in sudo
+# actually we need to be root to build some more on this image
+# so chefuser is created but not really used here 
 #
-USER chefuser
 WORKDIR /home/chefuser
 WORKDIR chef-repo
 WORKDIR ../learn-chef
+WORKDIR /root
+USER root
